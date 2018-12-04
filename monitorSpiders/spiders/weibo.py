@@ -8,4 +8,4 @@ class WeiboSpider(scrapy.Spider):
     start_urls = ['http://weibo.com/']
 
     def parse(self, response):
-        pass
+        print("敲你妈，终于启动了")
