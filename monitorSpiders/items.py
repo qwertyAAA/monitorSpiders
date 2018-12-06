@@ -8,7 +8,10 @@
 import scrapy
 
 
-class MonitorspidersItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+class WeiboItems(scrapy.Item):
+    author = scrapy.Field()
+    author_url = scrapy.Field()
+    article = scrapy.Field()
+    article_create_time = scrapy.Field()
+    article_from = scrapy.Field()
+    affected_count = scrapy.Field()
