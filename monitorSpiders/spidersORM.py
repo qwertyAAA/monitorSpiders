@@ -2,10 +2,10 @@ from sqlalchemy import Table, create_engine, MetaData
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.automap import automap_base
 
-engine = create_engine("mysql+pymysql://root:123456@10.25.116.62:3306/monitor")
+# engine = create_engine("mysql+pymysql://root:123456@10.25.116.62:3306/monitor")
+engine = create_engine("mysql+pymysql://root:123456@localhost:3306/monitor")
 metadata = MetaData(engine)
 DBSession = sessionmaker(bind=engine)
-session = DBSession()
 
 # 获取数据库中已经存在的表结构，声明为一个sqlalchemy的Table类
 Table('SpiderDB_article', metadata, autoload=True)
@@ -25,6 +25,7 @@ Source = Base.classes.SpiderDB_source
 
 # sqlalchemy数据添加操作
 # testAuthor = Author(author="jjjjjjjjjjjjjjj", author_url="111111111111111")
+# session = DBSession()
 # session.add(testAuthor)
 # session.commit()
 # session.close()
