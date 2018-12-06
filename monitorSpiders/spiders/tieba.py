@@ -11,14 +11,15 @@ class TiebaSpider(scrapy.Spider):
     name = 'tieba'
     allowed_domains = ['tieba.baidu.com']
     start_urls = ['http://tieba.baidu.com/']
+    key_words=['大庆油田']
     url = []
     def start_requests(self):
         print('开始')
-        urls=['http://tieba.baidu.com/f/search/res?ie=utf-8&qw=']
-        key_word='大庆油田'
-        # meta = {'proxy': 'http://211.138.61.27'}
-        for url in urls:
-            yield Request(url=url+key_word,)
+        for key_word in self.key_words:
+            urls=['http://tieba.baidu.com/f/search/res?ie=utf-8&qw=']
+            # meta = {'proxy': 'http://211.138.61.27'}
+            for url in urls:
+                yield Request(url=url+key_word,)
 
     def parse(self, response):
         print('解析')
@@ -33,15 +34,16 @@ class TiebaSpider(scrapy.Spider):
         # page_list = brower.find_elements_by_xpath('/html/body/div[4]/div/div[2]/div[5]/a')
         # for i in range(1,int(end_page)+1):
         #     yield Request(url=end_href[0:num+1]+str(i), callback=self.index)
+        #直接获取当前页面下的所有分页
         page_list = brower.find_elements_by_xpath('/html/body/div[4]/div/div[2]/div[5]/a')
         for i in page_list:
             if (not i.text in ['首页', '尾页', '下一页>', '<上一页']) and (not i.get_attribute('href') in self.url):
                 self.url.append(i.get_attribute('href'))
         print(self.url)
         for i in self.url:
-            yield Request(url=i, callback=self.index)
+            yield Request(url=i, callback=self.storage)
 
-    def index(self, response):
+    def storage(self, response):
         print('存储')
         brower = webdriver.PhantomJS()
         brower.get(response.url)
