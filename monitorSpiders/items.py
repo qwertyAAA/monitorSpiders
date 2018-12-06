@@ -15,3 +15,10 @@ class WeiboItems(scrapy.Item):
     article_create_time = scrapy.Field()
     article_from = scrapy.Field()
     affected_count = scrapy.Field()
+
+    
+class MonitorspidersItem(scrapy.Item):
+    # define the fields for your item here like:
+    # name = scrapy.Field()
+    title = scrapy.Field()
+    href = scrapy.Field()
