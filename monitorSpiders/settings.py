@@ -66,7 +66,8 @@ ROBOTSTXT_OBEY = False
 
 ITEM_PIPELINES = {
    # 'monitorSpiders.pipelines.MonitorspidersPipeline': 300,
-   'monitorSpiders.pipelines.FilePipeline':300
+   'monitorSpiders.pipelines.TiebaPipeline':300,
+   # 'monitorSpiders.pipelines.FilePipeline':301,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -90,4 +91,5 @@ ITEM_PIPELINES = {
 # HTTPCACHE_IGNORE_HTTP_CODES = []
 # HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
-# FILE_PATH='test.txt'
+FILE_PATH='test.txt'
+
