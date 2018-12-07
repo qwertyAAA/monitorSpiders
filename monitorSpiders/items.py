@@ -8,34 +8,17 @@
 import scrapy
 
 
-class TiebaItems(scrapy.Item):
-    author = scrapy.Field()
-    author_url = scrapy.Field()
-    article_title = scrapy.Field()
-    article_content=scrapy.Field()
-    article_url=scrapy.Field()
-    article_detail =scrapy.Field()
-    article_create_time = scrapy.Field()
-    affected_count = scrapy.Field()
-
-    
 class WeiboItems(scrapy.Item):
     keyword = scrapy.Field()
     author = scrapy.Field()
     author_url = scrapy.Field()
-    article_title = scrapy.Field()
-    article_content=scrapy.Field()
-    article_url=scrapy.Field()
-    article_detail =scrapy.Field()
+    article = scrapy.Field()
     article_create_time = scrapy.Field()
     affected_count = scrapy.Field()
-    
 
-# class FileItems(scrapy.Item):
-#     author = scrapy.Field()
-#     author_url = scrapy.Field()
-#     article_title = scrapy.Field()
-#     article_url=scrapy.Field()
-#     article_content=scrapy.Field()
-#     create_time=scrapy.Field()
-#     n=scrapy.Field()
+
+class MonitorspidersItem(scrapy.Item):
+    # define the fields for your item here like:
+    # name = scrapy.Field()
+    title = scrapy.Field()
+    href = scrapy.Field()
