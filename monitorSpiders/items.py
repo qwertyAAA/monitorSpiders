@@ -9,11 +9,11 @@ import scrapy
 
 
 class WeiboItems(scrapy.Item):
+    keyword = scrapy.Field()
     author = scrapy.Field()
     author_url = scrapy.Field()
     article = scrapy.Field()
     article_create_time = scrapy.Field()
-    article_from = scrapy.Field()
     affected_count = scrapy.Field()
 
 
