@@ -65,8 +65,6 @@ ROBOTSTXT_OBEY = False
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 
 ITEM_PIPELINES = {
-    # 'monitorSpiders.pipelines.MonitorspidersPipeline': 300,
-    # 'monitorSpiders.pipelines.FilePipeline': 300,
     'monitorSpiders.pipelines.WeiboPipeline': 301,
 }
 
