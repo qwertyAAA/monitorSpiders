@@ -2,7 +2,8 @@ from sqlalchemy import Table, create_engine, MetaData
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.automap import automap_base
 
-engine = create_engine("mysql+pymysql://root:123456@10.25.116.62/monitor")
+
+engine = create_engine("mysql+pymysql://root:123456@10.25.116.62:3306/monitor")
 # engine = create_engine("mysql+pymysql://root:123456@localhost:3306/monitor")
 metadata = MetaData(engine)
 DBSession = sessionmaker(bind=engine)
@@ -22,10 +23,3 @@ Base.prepare()
 Article = Base.classes.SpiderDB_article
 Author = Base.classes.SpiderDB_author
 Source = Base.classes.SpiderDB_source
-
-# sqlalchemy数据添加操作
-# testAuthor = Author(author="jjjjjjjjjjjjjjj", author_url="111111111111111")
-# session = DBSession()
-# session.add(testAuthor)
-# session.commit()
-# session.close()
