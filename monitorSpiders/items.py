@@ -12,24 +12,12 @@ class TiebaItems(scrapy.Item):
     author = scrapy.Field()
     author_url = scrapy.Field()
     article_title = scrapy.Field()
-    article_content=scrapy.Field()
-    article_url=scrapy.Field()
-    article_detail =scrapy.Field()
+    article_content = scrapy.Field()
+    article_url = scrapy.Field()
+    article_detail = scrapy.Field()
     article_create_time = scrapy.Field()
+    article_from = scrapy.Field()
     affected_count = scrapy.Field()
-
-    
-class WeiboItems(scrapy.Item):
-    keyword = scrapy.Field()
-    author = scrapy.Field()
-    author_url = scrapy.Field()
-    article_title = scrapy.Field()
-    article_content=scrapy.Field()
-    article_url=scrapy.Field()
-    article_detail =scrapy.Field()
-    article_create_time = scrapy.Field()
-    affected_count = scrapy.Field()
-    
 
 # class FileItems(scrapy.Item):
 #     author = scrapy.Field()
